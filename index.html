@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Damian Grzyska</title>
+<meta name="description" content="Programista. Na co dzień Java, Spring, Angular i AWS, po godzinach małe aplikacje, które działają w całości w przeglądarce.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f2efe7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141312" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/newsreader-normal-300-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dfgrzyska.github.io/">
+<meta property="og:title" content="Damian Grzyska">
+<meta property="og:description" content="Programista. Na co dzień Java, Spring, Angular i AWS, po godzinach małe aplikacje, które działają w całości w przeglądarce.">
+<meta property="og:image" content="https://dfgrzyska.github.io/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  // Pick the language before the first paint: a saved choice wins, then the browser's first language.
+  (function () {
+    var lang;
+    try { lang = localStorage.getItem('lang'); } catch (e) {}
+    if (lang !== 'pl' && lang !== 'en') {
+      var first = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+      lang = /^pl\b/i.test(first) ? 'pl' : 'en';
+    }
+    document.documentElement.lang = lang;
+  })();
+</script>
+<style>
+  @font-face {
+    font-family: 'Newsreader'; font-style: normal; font-weight: 300 600; font-display: swap;
+    src: url(fonts/newsreader-normal-300-600-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Newsreader'; font-style: normal; font-weight: 300 600; font-display: swap;
+    src: url(fonts/newsreader-normal-300-600-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: 'Newsreader'; font-style: italic; font-weight: 300 600; font-display: swap;
+    src: url(fonts/newsreader-italic-300-600-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Newsreader'; font-style: italic; font-weight: 300 600; font-display: swap;
+    src: url(fonts/newsreader-italic-300-600-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap;
+    src: url(fonts/plex-mono-normal-400-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 400; font-display: swap;
+    src: url(fonts/plex-mono-normal-400-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap;
+    src: url(fonts/plex-mono-normal-500-latin.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'IBM Plex Mono'; font-style: normal; font-weight: 500; font-display: swap;
+    src: url(fonts/plex-mono-normal-500-latin-ext.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+
+  :root {
+    --paper: #f2efe7;
+    --ink: #1c1b18;
+    --muted: #6d695f;
+    --rule: rgba(28, 27, 24, .16);
+    --accent: #c63d17;
+    --shadow: 0 1px 2px rgba(28, 27, 24, .08), 0 24px 48px -16px rgba(28, 27, 24, .4);
+    --serif: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #141312;
+      --ink: #ebe6dc;
+      --muted: #9b968b;
+      --rule: rgba(235, 230, 220, .14);
+      --accent: #f0703f;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 24px 48px -16px rgba(0, 0, 0, .8);
+      color-scheme: dark;
+    }
+  }
+
+  :root[lang="pl"] [lang="en"],
+  :root[lang="en"] [lang="pl"] { display: none; }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.1875rem/1.5 var(--serif);
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent); color: var(--paper); }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 2px; }
+
+  .wrap { max-width: 74rem; margin: 0 auto; padding: 0 clamp(1rem, 4vw, 3rem); }
+  .mono, .label, .no, .tags, .year, .colophon {
+    font-family: var(--mono);
+    font-size: .8125rem;
+    letter-spacing: .02em;
+    color: var(--muted);
+  }
+
+  /* Top line */
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .top .mono { text-decoration: none; }
+  .top .mono:hover { color: var(--ink); }
+  .lang { display: flex; align-items: center; gap: .35rem; }
+  .lang button {
+    font: inherit;
+    font-family: var(--mono);
+    font-size: .8125rem;
+    color: var(--muted);
+    background: none;
+    border: 0;
+    padding: .25rem .15rem;
+    cursor: pointer;
+  }
+  .lang button:hover { color: var(--ink); }
+  .lang button[aria-pressed="true"] {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: .3em;
+    text-decoration-thickness: 1.5px;
+  }
+
+  /* Name and a few words */
+  .intro { padding-top: clamp(3.5rem, 13vh, 9rem); padding-bottom: clamp(4.5rem, 12vw, 9rem); }
+  h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: clamp(3.25rem, 10.5vw, 9rem);
+    line-height: .92;
+    letter-spacing: -.03em;
+    text-wrap: balance;
+  }
+  .stop { color: var(--accent); }
+  .lede {
+    max-width: 34ch;
+    margin: clamp(1.75rem, 4vw, 2.75rem) 0 0;
+    font-size: clamp(1.25rem, 2.1vw, 1.625rem);
+    line-height: 1.42;
+    font-weight: 350;
+    text-wrap: pretty;
+  }
+  .lede em { font-style: italic; }
+
+  /* Section labels */
+  .label {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+  }
+  .note {
+    max-width: 46ch;
+    margin: .75rem 0 2.25rem;
+    color: var(--muted);
+    font-size: 1.0625rem;
+    text-wrap: pretty;
+  }
+
+  /* The index */
+  .projects { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--rule); }
+  .row {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 16rem) minmax(0, 1fr) 10rem 4.5rem;
+    column-gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.4rem 0 1.5rem;
+    border-top: 1px solid var(--rule);
+    text-decoration: none;
+    transition: opacity .3s ease;
+  }
+  .name {
+    font-size: 1.75rem;
+    line-height: 1.15;
+    letter-spacing: -.012em;
+    transition: transform .4s cubic-bezier(.2, .7, .2, 1);
+  }
+  .desc { max-width: 40ch; color: var(--muted); font-size: 1.0625rem; line-height: 1.45; text-wrap: pretty; }
+  .year { text-align: right; white-space: nowrap; }
+  .arrow {
+    display: inline-block;
+    margin-left: .45em;
+    color: var(--accent);
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: opacity .25s ease, transform .3s ease;
+  }
+  .no { transition: color .25s ease; }
+  .thumb { display: none; }
+
+  .row:hover .name, .row:focus-visible .name { transform: translateX(.5rem); }
+  .row:hover .no, .row:focus-visible .no { color: var(--accent); }
+  .row:hover .arrow, .row:focus-visible .arrow { opacity: 1; transform: none; }
+  @media (hover: hover) {
+    .projects:hover .row:not(:hover) { opacity: .4; }
+  }
+
+  /* The screenshot that follows the cursor */
+  .peek {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    margin: 0;
+    pointer-events: none;
+    will-change: transform;
+  }
+  .peek img {
+    display: block;
+    width: 25rem;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    outline: 1px solid var(--rule);
+    opacity: 0;
+    transform: scale(.92);
+    transition: opacity .2s ease, transform .35s cubic-bezier(.2, .7, .2, 1);
+  }
+  .peek[data-kind="phone"] img { width: 12.5rem; aspect-ratio: 5 / 9; border-radius: 22px; }
+  .peek.on img { opacity: 1; transform: none; }
+
+  /* Elsewhere */
+  .elsewhere { padding-top: clamp(4.5rem, 10vw, 8rem); }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem 3.5rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .links a { display: inline-block; text-decoration: none; }
+  .links .site {
+    display: block;
+    font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -.015em;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .18em;
+    text-decoration-color: var(--rule);
+    transition: text-decoration-color .25s ease;
+  }
+  .links a:hover .site { text-decoration-color: var(--accent); }
+  .links .mono { display: block; margin-top: .35rem; }
+
+  footer.wrap { padding-top: clamp(5rem, 12vw, 9rem); padding-bottom: 2.5rem; }
+  .foot { padding-top: 1.25rem; border-top: 1px solid var(--rule); }
+  .colophon { max-width: 60ch; margin: 0; line-height: 1.7; }
+
+  @media (max-width: 859px) {
+    .row {
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "no   year"
+        "name name"
+        "desc desc"
+        "tags tags";
+      row-gap: .35rem;
+      padding: 1.25rem 0 1.4rem;
+    }
+    .no { grid-area: no; }
+    .year { grid-area: year; }
+    .name { grid-area: name; margin-top: .2rem; font-size: 1.625rem; }
+    .desc { grid-area: desc; }
+    .tags { grid-area: tags; margin-top: .25rem; }
+  }
+  @media (max-width: 859px) and (hover: none) {
+    .row {
+      grid-template-columns: minmax(0, 1fr) 5.5rem;
+      grid-template-areas:
+        "no   year"
+        "name thumb"
+        "desc thumb"
+        "tags thumb";
+      column-gap: 1rem;
+    }
+    .thumb {
+      display: block;
+      grid-area: thumb;
+      align-self: start;
+      width: 5.5rem;
+      height: 5.5rem;
+      margin-top: .35rem;
+      object-fit: cover;
+      object-position: top left;
+      border-radius: 6px;
+      outline: 1px solid var(--rule);
+    }
+    .arrow { opacity: 1; transform: none; }
+    .peek { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="mono" href="https://github.com/dfgrzyska">dfgrzyska</a>
+  <div class="lang" role="group" aria-label="Język / Language">
+    <button type="button" data-lang="pl">PL</button>
+    <span class="mono" aria-hidden="true">/</span>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+</header>
+
+<main>
+  <section class="wrap intro">
+    <h1>Damian Grzyska<span class="stop">.</span></h1>
+    <p class="lede" lang="pl">Programuję zawodowo od 2016 roku: Java, Spring, Angular, AWS. <em>Po godzinach</em> robię małe aplikacje do własnych spraw: na wyjazd, na przeprowadzkę, do pilnowania promocji w&nbsp;bankach. Czasem coś z&nbsp;modelami językowymi.</p>
+    <p class="lede" lang="en">I've written software for a living since 2016: Java, Spring, Angular, AWS. <em>After hours</em> I make small apps for my own errands: a trip, a move, keeping track of bank promotions. Sometimes something with language models.</p>
+  </section>
+
+  <section class="wrap work" aria-labelledby="work-title">
+    <h2 class="label" id="work-title"><span><span lang="pl">Projekty</span><span lang="en">Projects</span></span><span>05</span></h2>
+    <p class="note" lang="pl">Każdy działa w&nbsp;całości w&nbsp;przeglądarce. Nie stoi za nimi mój serwer, a&nbsp;to, co wpiszesz, zostaje na Twoim urządzeniu.</p>
+    <p class="note" lang="en">Each one runs entirely in the browser. There's no server of mine behind them, and what you type stays on your device.</p>
+
+    <ol class="projects">
+      <li>
+        <a class="row" href="/basal-web/" data-shot="img/basal-web.webp" data-kind="desktop">
+          <span class="no">01</span>
+          <span class="name"><span lang="pl">basal w&nbsp;przeglądarce</span><span lang="en">basal in the browser</span></span>
+          <span class="desc"><span lang="pl">Pytania o&nbsp;tekst i&nbsp;odpowiedzi ze skalibrowaną pewnością. Model 1,5&nbsp;mld parametrów liczy na Twoim urządzeniu.</span><span lang="en">Questions about a text, answered with calibrated confidence. A 1.5B-parameter model runs on your device.</span></span>
+          <span class="tags">WebAssembly · LLM</span>
+          <span class="year">2026<span class="arrow" aria-hidden="true">↗</span></span>
+          <img class="thumb" src="img/basal-web.webp" alt="" width="960" height="600" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a class="row" href="/kiusiu-trip/" data-shot="img/kiusiu-trip.webp" data-kind="phone">
+          <span class="no">02</span>
+          <span class="name"><span lang="pl">Kiusiu</span><span lang="en">Kyushu</span></span>
+          <span class="desc"><span lang="pl">Przewodnik na 22&nbsp;dni w&nbsp;Japonii: plan każdego dnia, mapy, koszty w&nbsp;jenach i&nbsp;złotówkach. Działa bez internetu.</span><span lang="en">A guide to 22 days in Japan: a plan for every day, maps, costs in yen and złoty. Works offline.</span></span>
+          <span class="tags">PWA · Leaflet</span>
+          <span class="year">2026<span class="arrow" aria-hidden="true">↗</span></span>
+          <img class="thumb" src="img/kiusiu-trip.webp" alt="" width="500" height="900" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a class="row" href="/new-flat/" data-shot="img/new-flat.webp" data-kind="phone">
+          <span class="no">03</span>
+          <span class="name"><span lang="pl">Nowe mieszkanie</span><span lang="en">New flat</span></span>
+          <span class="desc"><span lang="pl">Zakup i&nbsp;urządzanie mieszkania jako 86 kroków do odhaczenia, z&nbsp;terminami i&nbsp;budżetem.</span><span lang="en">Buying and furnishing a flat as 86 steps to tick off, with deadlines and a budget.</span></span>
+          <span class="tags">PWA · mobile</span>
+          <span class="year">2026<span class="arrow" aria-hidden="true">↗</span></span>
+          <img class="thumb" src="img/new-flat.webp" alt="" width="500" height="900" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a class="row" href="/home-planner/" data-shot="img/home-planner.webp" data-kind="desktop">
+          <span class="no">04</span>
+          <span class="name"><span lang="pl">Planer mieszkania</span><span lang="en">Flat planner</span></span>
+          <span class="desc"><span lang="pl">Meble przeciągane na wierny rzut mieszkania, z&nbsp;widokiem 3D i&nbsp;układem udostępnianym linkiem.</span><span lang="en">Drag furniture onto an accurate floor plan, walk around it in 3D, share the layout as a link.</span></span>
+          <span class="tags">Three.js · 2D/3D</span>
+          <span class="year">2026<span class="arrow" aria-hidden="true">↗</span></span>
+          <img class="thumb" src="img/home-planner.webp" alt="" width="960" height="600" loading="lazy">
+        </a>
+      </li>
+      <li>
+        <a class="row" href="/bank-promo-tracker/" data-shot="img/bank-promo-tracker.webp" data-kind="phone">
+          <span class="no">05</span>
+          <span class="name"><span lang="pl">Banki</span><span lang="en">Bank promos</span></span>
+          <span class="desc"><span lang="pl">Warunki promocji bankowych do odhaczania, z&nbsp;terminami, żeby premia nie przepadła.</span><span lang="en">Bank promotion conditions to tick off, with deadlines, so the bonus doesn't slip away.</span></span>
+          <span class="tags">PWA · mobile</span>
+          <span class="year">2026<span class="arrow" aria-hidden="true">↗</span></span>
+          <img class="thumb" src="img/bank-promo-tracker.webp" alt="" width="500" height="900" loading="lazy">
+        </a>
+      </li>
+    </ol>
+  </section>
+
+  <section class="wrap elsewhere" aria-labelledby="elsewhere-title">
+    <h2 class="label" id="elsewhere-title"><span lang="pl">Gdzie indziej</span><span lang="en">Elsewhere</span></h2>
+    <ul class="links">
+      <li><a href="https://github.com/dfgrzyska"><span class="site">GitHub</span><span class="mono">dfgrzyska</span></a></li>
+      <li><a href="https://www.linkedin.com/in/damian-grzyska/"><span class="site">LinkedIn</span><span class="mono">damian-grzyska</span></a></li>
+    </ul>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="foot">
+    <p class="colophon" lang="pl">Jeden plik HTML, bez frameworka, ciasteczek i&nbsp;analityki. Krój: Newsreader i&nbsp;IBM Plex Mono. Ostatnia zmiana: październik 2026.</p>
+    <p class="colophon" lang="en">One HTML file, no framework, cookies or analytics. Set in Newsreader and IBM Plex Mono. Last updated: October 2026.</p>
+  </div>
+</footer>
+
+<figure class="peek" aria-hidden="true"><img alt=""></figure>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var descriptions = {
+      pl: 'Programista. Na co dzień Java, Spring, Angular i AWS, po godzinach małe aplikacje, które działają w całości w przeglądarce.',
+      en: 'Software engineer. Java, Spring, Angular and AWS by day; after hours, small apps that run entirely in the browser.'
+    };
+    var buttons = document.querySelectorAll('.lang button');
+
+    function applyLang(lang) {
+      root.lang = lang;
+      document.querySelector('meta[name="description"]').content = descriptions[lang];
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        applyLang(b.dataset.lang);
+        try { localStorage.setItem('lang', b.dataset.lang); } catch (e) {}
+      });
+    });
+    applyLang(root.lang);
+
+    // Screenshot next to the cursor. It trails the pointer a little and leans into the movement.
+    var canHover = matchMedia('(hover: hover) and (pointer: fine)');
+    var still = matchMedia('(prefers-reduced-motion: reduce)');
+    var list = document.querySelector('.projects');
+    var rows = list.querySelectorAll('.row');
+    var peek = document.querySelector('.peek');
+    var img = peek.querySelector('img');
+    var x = 0, y = 0, tx = 0, ty = 0, shown = false, raf = 0;
+
+    function aim(e) {
+      var w = img.offsetWidth, h = img.offsetHeight, gap = 28;
+      var left = e.clientX + gap;
+      if (left + w > innerWidth - 16) left = e.clientX - gap - w;
+      tx = left;
+      ty = Math.min(Math.max(e.clientY - h / 2, 16), innerHeight - h - 16);
+    }
+    function frame() {
+      var k = still.matches ? 1 : 0.2;
+      var dx = tx - x;
+      x += dx * k;
+      y += (ty - y) * k;
+      var lean = still.matches ? 0 : Math.max(-5, Math.min(5, dx * 0.06));
+      peek.style.transform = 'translate3d(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px,0) rotate(' + lean.toFixed(2) + 'deg)';
+      raf = shown || Math.abs(dx) > 0.5 ? requestAnimationFrame(frame) : 0;
+    }
+
+    rows.forEach(function (row) {
+      row.addEventListener('pointerenter', function (e) {
+        if (!canHover.matches) return;
+        img.src = row.dataset.shot;
+        peek.dataset.kind = row.dataset.kind;
+        aim(e);
+        if (!shown) { x = tx; y = ty; }
+        shown = true;
+        peek.classList.add('on');
+        if (!raf) raf = requestAnimationFrame(frame);
+      });
+      row.addEventListener('pointermove', aim);
+    });
+    list.addEventListener('pointerleave', function () {
+      shown = false;
+      peek.classList.remove('on');
+    });
+
+    // Warm the cache so switching rows never shows an empty frame.
+    if (canHover.matches) {
+      addEventListener('load', function () {
+        rows.forEach(function (row) { new Image().src = row.dataset.shot; });
+      });
+    }
+  })();
+</script>
+</body>
+</html>
