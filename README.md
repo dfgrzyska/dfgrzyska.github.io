@@ -14,7 +14,7 @@ Bez frameworka i bez kroku budowania: GitHub Pages serwuje repo tak, jak jest
    - apka na telefon: 500 × 900, `data-kind="phone"`.
 
    `python tools/shots.py <nazwa> <url> desktop|phone` robi zrzut przez Edge w trybie headless.
-3. Popraw licznik nad listą (`05`).
+3. Popraw licznik nad listą (`06`).
 
 ## Lokalnie
 
